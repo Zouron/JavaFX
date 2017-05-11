@@ -3,6 +3,7 @@ package com.jasonrego.address.view;
 
 import com.jasonrego.address.MainApp;
 import com.jasonrego.address.model.Person;
+import com.jasonrego.address.util.DateUtil;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -50,6 +51,13 @@ public class PersonOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+        
+     // Clear person details.
+        showPersonDetails(null);
+
+        // Listen for selection changes and show the person details when changed.
+        personTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showPersonDetails(newValue));
     }
 
     /**
@@ -79,8 +87,8 @@ public class PersonOverviewController {
             postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
             cityLabel.setText(person.getCity());
 
-            // TODO: We need a way to convert the birthday into a String! 
-            // birthdayLabel.setText(...);
+            // 
+            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
         } else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
