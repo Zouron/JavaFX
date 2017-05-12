@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="251.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jasonrego.address.view.PersonEditDialogController">
+<AnchorPane prefHeight="251.0" prefWidth="434.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jasonrego.address.view.PersonEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0">
         <columnConstraints>
@@ -31,7 +31,7 @@
             <Label text="City" GridPane.rowIndex="3" />
             <Label text="Postal Code" GridPane.rowIndex="4" />
             <Label text="Birthday" GridPane.rowIndex="5" />
-            <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
+            <TextField fx:id="firstNameField" prefHeight="16.0" prefWidth="237.0" GridPane.columnIndex="1" />
             <TextField fx:id="lastNameField" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="streetField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -39,9 +39,9 @@
             <TextField fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <ButtonBar layoutX="217.0" layoutY="197.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="186.0" layoutY="197.0" prefHeight="40.0" prefWidth="231.0">
         <buttons>
-          <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
+          <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOk" text="OK" />
             <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
         </buttons>
       </ButtonBar>
